@@ -1,0 +1,255 @@
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://localhost/webservices/vtv/informarVerificacion/s_002.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://localhost/webservices/vtv/informarVerificacion/s_002.php">
+    <types>
+        <xsd:schema targetNamespace="http://localhost/webservices/vtv/informarVerificacion/s_002.php">
+            <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+            <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+            <xsd:complexType name="certificadoDigital">
+                <xsd:all>
+                    <xsd:element name="certificadoURL" type="xsd:string" nillable="true"/>
+                    <xsd:element name="certificadoBase64" type="xsd:string"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="respuestaInformarVerificacion">
+                <xsd:all>
+                    <xsd:element name="respuestaID" type="xsd:int"/>
+                    <xsd:element name="respuestaMensaje" type="xsd:string"/>
+                    <xsd:element name="turnoID" type="xsd:unsignedLong"/>
+                    <xsd:element name="dominio" type="xsd:string" nillable="true"/>
+                    <xsd:element name="mtm" type="xsd:string" nillable="true"/>
+                    <xsd:element name="verificacionID" type="xsd:unsignedLong" nillable="true"/>
+                    <xsd:element name="certificadoDigital" type="tns:certificadoDigital"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="formulariosListado">
+                <xsd:all>
+                    <xsd:element name="formulario" type="xsd:unsignedLong"/>
+                    <xsd:element name="estado" type="tns:estadosFormularios"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="formularios">
+                <xsd:complexContent>
+                    <xsd:restriction base="SOAP-ENC:Array">
+                        <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:formulariosListado[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="datosPresentante">
+                <xsd:all>
+                    <xsd:element name="datosPersonales" type="tns:datosPersonales"/>
+                    <xsd:element name="domicilio" type="tns:domicilio"/>
+                    <xsd:element name="datosContacto" type="tns:datosContactoPresentante"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="domicilio">
+                <xsd:all>
+                    <xsd:element name="calle" type="xsd:string"/>
+                    <xsd:element name="numero" type="xsd:int"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="datosContactoPresentante">
+                <xsd:all>
+                    <xsd:element name="genero" type="tns:genero"/>
+                    <xsd:element name="tipoDocumento" type="xsd:int" nillable="true"/>
+                    <xsd:element name="numeroDocumento" type="xsd:unsignedLong" nillable="true"/>
+                    <xsd:element name="numeroCuit" type="xsd:unsignedLong" nillable="true"/>
+                    <xsd:element name="nombre" type="xsd:string" nillable="true"/>
+                    <xsd:element name="apellido" type="xsd:string" nillable="true"/>
+                    <xsd:element name="razonSocial" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="resultadoVerificacion">
+                <xsd:all>
+                    <xsd:element name="resultado" type="tns:verificacionResultado"/>
+                    <xsd:element name="observaciones" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="medicionesVerificacion">
+                <xsd:all>
+                    <xsd:element name="frenosEficaciaServicio" type="xsd:float" nillable="true"/>
+                    <xsd:element name="frenosEficaciaMano" type="xsd:float" nillable="true"/>
+                    <xsd:element name="frenosDesequilibrio1Eje" type="xsd:float" nillable="true"/>
+                    <xsd:element name="frenosDesequilibrio2Eje" type="xsd:float" nillable="true"/>
+                    <xsd:element name="amortiguadores1EjeIzq" type="xsd:float" nillable="true"/>
+                    <xsd:element name="amortiguadores2EjeIzq" type="xsd:float" nillable="true"/>
+                    <xsd:element name="amortiguadores1EjeDer" type="xsd:float" nillable="true"/>
+                    <xsd:element name="amortiguadores2EjeDer" type="xsd:float" nillable="true"/>
+                    <xsd:element name="alineacionDeriva" type="xsd:float" nillable="true"/>
+                    <xsd:element name="contaminacionCOBaja" type="xsd:float" nillable="true"/>
+                    <xsd:element name="contaminacionPpmHcBaja" type="xsd:float" nillable="true"/>
+                    <xsd:element name="contaminacionCOAlta" type="xsd:float" nillable="true"/>
+                    <xsd:element name="contaminacionPpmHcAlta" type="xsd:float" nillable="true"/>
+                    <xsd:element name="contaminacionDieselK" type="xsd:float" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="detallesVerificacion">
+                <xsd:all>
+                    <xsd:element name="motorVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="lucesVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="direccionVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="frenosVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="suspensionVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="chasisVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="llantasVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="neumaticosVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="generalVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="contaminacionVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="seguridadVerificacion" type="tns:resultadoVerificacion"/>
+                    <xsd:element name="medicionesVerificacion" type="tns:medicionesVerificacion" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="datosVerificacion">
+                <xsd:all>
+                    <xsd:element name="resultado" type="tns:verificacionResultado"/>
+                    <xsd:element name="fechaVencimiento" type="xsd:date"/>
+                    <xsd:element name="fechaVigencia" type="xsd:date"/>
+                    <xsd:element name="fechaEntrada" type="xsd:dateTime"/>
+                    <xsd:element name="fechaSalida" type="xsd:dateTime"/>
+                    <xsd:element name="linea" type="xsd:int"/>
+                    <xsd:element name="detallesVerificacion" type="tns:detallesVerificacion"/>
+                    <xsd:element name="observaciones" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="datosPersonales">
+                <xsd:all>
+                    <xsd:element name="genero" type="tns:genero"/>
+                    <xsd:element name="tipoDocumento" type="xsd:int" nillable="true"/>
+                    <xsd:element name="numeroDocumento" type="xsd:unsignedLong" nillable="true"/>
+                    <xsd:element name="numeroCuit" type="xsd:unsignedLong" nillable="true"/>
+                    <xsd:element name="nombre" type="xsd:string" nillable="true"/>
+                    <xsd:element name="apellido" type="xsd:string" nillable="true"/>
+                    <xsd:element name="razonSocial" type="xsd:string" nillable="true"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="datosVehiculoInformar">
+                <xsd:all>
+                    <xsd:element name="dominio" type="xsd:string"/>
+                    <xsd:element name="numeroChasis" type="xsd:string"/>
+                    <xsd:element name="anio" type="xsd:int"/>
+                    <xsd:element name="jurisdiccionID" type="xsd:int"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="tiempos">
+                <xsd:all>
+                    <xsd:element name="horaIngreso" type="xsd:string"/>
+                    <xsd:element name="horaEgreso" type="xsd:string"/>
+                    <xsd:element name="tiempoTotalLinea" type="xsd:string"/>
+                    <xsd:element name="tiempoTotalEgreso" type="xsd:string"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="titular">
+                <xsd:all>
+                    <xsd:element name="nombreApellido" type="xsd:string"/>
+                    <xsd:element name="tipoDocumento" type="xsd:string"/>
+                    <xsd:element name="numeroDocumento" type="xsd:string"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="vehiculo">
+                <xsd:all>
+                    <xsd:element name="dominio" type="xsd:string"/>
+                    <xsd:element name="anio" type="xsd:string"/>
+                    <xsd:element name="marca" type="xsd:string"/>
+                    <xsd:element name="modelo" type="xsd:string"/>
+                    <xsd:element name="clasificacion" type="xsd:string"/>
+                    <xsd:element name="chasis" type="xsd:string"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="verificacion">
+                <xsd:all>
+                    <xsd:element name="resultado" type="xsd:string"/>
+                    <xsd:element name="fechaInspeccion" type="xsd:string"/>
+                    <xsd:element name="detalleVerificacion" type="tns:detalleVerificacion"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="detalleVerificacionListado">
+                <xsd:all>
+                    <xsd:element name="codigo" type="xsd:string"/>
+                    <xsd:element name="descripcion" type="tns:string"/>
+                    <xsd:element name="tipoDefecto" type="tns:string"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="detalleVerificacion">
+                <xsd:complexContent>
+                    <xsd:restriction base="SOAP-ENC:Array">
+                        <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:detalleVerificacionListado[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="datosImpresion">
+                <xsd:all>
+                    <xsd:element name="informeInspeccionNumero" type="xsd:string"/>
+                    <xsd:element name="obleaNumero" type="xsd:string"/>
+                    <xsd:element name="fechaVencimiento" type="xsd:string"/>
+                    <xsd:element name="codigo" type="xsd:string"/>
+                    <xsd:element name="observaciones" type="xsd:string"/>
+                    <xsd:element name="tiempos" type="tns:tiempos"/>
+                    <xsd:element name="titular" type="tns:titular"/>
+                    <xsd:element name="vehiculo" type="tns:vehiculo"/>
+                    <xsd:element name="verificacion" type="tns:verificacion"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:simpleType name="estadosFormularios">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="V"/>
+                    <xsd:enumeration value="C"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="verificacionResultado">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="A"/>
+                    <xsd:enumeration value="R"/>
+                    <xsd:enumeration value="C"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="genero">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="M"/>
+                    <xsd:enumeration value="F"/>
+                    <xsd:enumeration value="PJ"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:schema>
+    </types>
+    <message name="informarVerificacionRequest">
+        <part name="usuarioID" type="xsd:unsignedLong"/>
+        <part name="ingresoID" type="xsd:unsignedLong"/>
+        <part name="plantaID" type="xsd:unsignedLong"/>
+        <part name="turnoID" type="xsd:unsignedLong"/>
+        <part name="formularios" type="tns:formularios"/>
+        <part name="tramiteNumero" type="xsd:unsignedLong"/>
+        <part name="obleaID" type="xsd:unsignedLong"/>
+        <part name="datosPresentante" type="tns:datosPresentante"/>
+        <part name="datosVerificacion" type="tns:datosVerificacion"/>
+        <part name="datosTitular" type="tns:datosPersonales"/>
+        <part name="datosVehiculo" type="tns:datosVehiculoInformar"/>
+        <part name="datosImpresion" type="tns:datosImpresion"/>
+    </message>
+    <message name="informarVerificacionResponse">
+        <part name="return" type="tns:respuestaInformarVerificacion"/>
+    </message>
+    <portType name="suvtvPortType">
+        <operation name="informarVerificacion">
+            <documentation>
+                la documentacion de la operacion informarVerificacion
+            </documentation>
+            <input message="tns:informarVerificacionRequest"/>
+            <output message="tns:informarVerificacionResponse"/>
+        </operation>
+    </portType>
+    <binding name="suvtvBinding" type="tns:suvtvPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="informarVerificacion">
+            <soap:operation soapAction="http://localhost/webservices/vtv/informarVerificacion/s_002.php#informarVerificacion" style="rpc"/>
+            <input>
+                <soap:body use="encoded" namespace="http://localhost/webservices/vtv/informarVerificacion/s_002.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="http://localhost/webservices/vtv/informarVerificacion/s_002.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="suvtv">
+        <port name="suvtvPort" binding="tns:suvtvBinding">
+            <soap:address location="http://localhost/webservices/vtv/informarVerificacion/s_002.php"/>
+        </port>
+    </service>
+</definitions>

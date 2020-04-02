@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00da5390-17e9-401c-8f45-0bbf3159d455" name="Default Changelist" comment="" />
+    <list default="true" id="00da5390-17e9-401c-8f45-0bbf3159d455" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vtv/informarVerificacion/cliente_s_002.php" beforeDir="false" afterPath="$PROJECT_DIR$/vtv/informarVerificacion/cliente_s_002.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vtv/informarVerificacion/s_002.php" beforeDir="false" afterPath="$PROJECT_DIR$/vtv/informarVerificacion/s_002.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +29,9 @@
     </option>
     <expand />
     <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Zqt33dY6HqWwYPXmVqHuEMtdtk" />
   <component name="ProjectViewState">
@@ -60,6 +67,8 @@
       <updated>1585578249776</updated>
       <workItem from="1585578250963" duration="9220000" />
       <workItem from="1585752540010" duration="11696000" />
+      <workItem from="1585834287359" duration="4721000" />
+      <workItem from="1585849599975" duration="1476000" />
     </task>
     <servers />
   </component>
@@ -67,6 +76,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585837267580">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585837267580" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585752563507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -10,6 +10,7 @@
  *
  */
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+ini_set('display_errors', 'On');
 require_once '../../vendor/nusoap/lib/nusoap.php';
 
 /**
@@ -426,7 +427,7 @@ $server->register(
 /*
 * 4. metodo al que llama el webservice cuando es consumido
 */
-function informarRecaudos($informarVerificacionRequest){
+function informarVerificacion($informarVerificacionRequest){
 
     $retorno = array();
     $retorno['respuestaInformarVerificacion'] = array(

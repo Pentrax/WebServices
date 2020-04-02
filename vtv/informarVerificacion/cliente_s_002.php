@@ -10,12 +10,13 @@
  *
  */
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+ini_set('display_errors', 'On');
 require_once '../../vendor/nusoap/lib/nusoap.php';
 ini_set ('soap.wsdl_cache_enabled', 0);
 $today = date("Y/m/d");
 $date_time = date("Y/m/d H:i:s");
 //var_dump($date_time);die;
-
+$arr = array();
 $arr = array(
     "usuarioID" 			=> "1",
     "ingresoID"				=> "2",
@@ -233,6 +234,24 @@ $arr = array(
     )
 );
 
+//xml file path
+$path = "file.xml";
+
+//read entire file into string
+$xmlfile = file_get_contents($path);
+
+//convert xml string into an object
+$xml = simplexml_load_string($xmlfile);
+
+//convert into json
+$json  = json_encode($xml);
+
+//convert into associative array
+$xmlArr = json_decode($json, true);
+
+//echo "<h2>Fault</h2><pre>";
+//echo print_r($xmlArr,true);
+//echo "</pre>";die;
 
 
 $wsdl = "http://localhost/webservices/vtv/informarVerificacion/s_002.php?wsdl";
@@ -244,7 +263,7 @@ $sClient->encode_utf8 = true;
 //echo print_r($sClient);
 //echo "</pre>";die;
 
-$response = $sClient->call('informarVerificacion', $arr);
+$response = $sClient->call('informarVerificacion', $xmlArr);
 
 $error = $sClient->getError();
 if ($error) {
@@ -267,6 +286,10 @@ if ($sClient->fault) {
         echo "</pre>";
     }
 }
+
+
+
+
 
 echo '<h2>Request</h2><pre>' . htmlspecialchars($sClient->request, ENT_QUOTES) . '</pre>';
 echo '<h2>Response</h2><pre>' . htmlspecialchars($sClient->response, ENT_QUOTES) . '</pre>';
