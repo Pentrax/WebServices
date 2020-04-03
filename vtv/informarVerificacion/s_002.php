@@ -430,7 +430,8 @@ $server->register(
 */
 function informarVerificacion($informarVerificacionRequest){
 
-    $retorno = array();
+    $pdf = getPdf();
+
     $retorno = array(
         "respuestaID" 				=> 1,
         "respuestaMensaje" 			=> 'test',
@@ -440,7 +441,7 @@ function informarVerificacion($informarVerificacionRequest){
         "verificacionID" 			=> '2',
         "certificadoDigital"        => array (
             "certificadoURL" 			=> 'http://url.certificado.com',
-            "certificadoBase64" 		=>  'base64string',
+            "certificadoBase64" 		=>  $pdf,
         )
 
     );
@@ -510,13 +511,14 @@ function getPdf(){
 EOD;
 
 // Print text using writeHTMLCell()
-    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+     $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 
 // ---------------------------------------------------------
 
+
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-   return  base64_encode($pdf->Output('example_001.pdf', 'I'));
+   return  $pdf->Output('example_001.pdf', 'E');
 
 }
 

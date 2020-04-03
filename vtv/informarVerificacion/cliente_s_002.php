@@ -31,7 +31,10 @@ $sClient->encode_utf8 = true;
 //echo print_r($sClient);
 //echo "</pre>";die;
 
+
+
 $response = $sClient->call('informarVerificacion', $arr);
+
 
 $error = $sClient->getError();
 if ($error) {
