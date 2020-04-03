@@ -518,7 +518,7 @@ EOD;
 
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-   return  $pdf->Output('example_001.pdf', 'E');
+   return  $pdf->Output('example_001.pdf', 'WS');
 
 }
 
