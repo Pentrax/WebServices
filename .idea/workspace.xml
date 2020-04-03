@@ -4,6 +4,7 @@
     <list default="true" id="00da5390-17e9-401c-8f45-0bbf3159d455" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vtv/informarVerificacion/cliente_s_002.php" beforeDir="false" afterPath="$PROJECT_DIR$/vtv/informarVerificacion/cliente_s_002.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vtv/informarVerificacion/file.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vtv/informarVerificacion/s_002.php" beforeDir="false" afterPath="$PROJECT_DIR$/vtv/informarVerificacion/s_002.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +41,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -68,7 +70,8 @@
       <workItem from="1585578250963" duration="9220000" />
       <workItem from="1585752540010" duration="11696000" />
       <workItem from="1585834287359" duration="4721000" />
-      <workItem from="1585849599975" duration="1476000" />
+      <workItem from="1585849599975" duration="2681000" />
+      <workItem from="1585916120561" duration="6868000" />
     </task>
     <servers />
   </component>
@@ -80,6 +83,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585837267580" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1585919808831">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585919808831" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585752563507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
