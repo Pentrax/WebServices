@@ -134,7 +134,7 @@ function getArrayTest(){
             "obleaNumero"		            => 	"898989",
             "fechaVencimiento"		        => 	"2020/03/01",
             "codigo" 		                =>  "01",
-            "observaciones"			        => 		"OBS Impresion",
+            "observaciones"			        => 	"OBS Impresion",
             "tiempos"		                => 		array(
                 "horaIngreso" 			=>  "10:00",
                 "horaEgreso"			=> 	"10:30",
@@ -157,70 +157,84 @@ function getArrayTest(){
             "verificacion"		            => 		array(
                 "resultado" 		        =>    "Aprobado",
                 "fechaInspeccion"			=> 		"2020/04/01",
-                "detalleVerificacion"		=> 		array(
-                    "motorVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "lucesVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "direccionVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "frenosVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "suspensionVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "chasisVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "llantasVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "neumaticosVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "generalVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "contaminacionVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "seguridadVerificacion" => array(
-                        "resultado" => "A",
-                        "observaciones" => "OBS"
-                    ),
-                    "medicionesVerificacion" => array(
-                        "frenosEficaciaServicio" 			=>  1.0 ,
-                        "frenosEficaciaMano"			    => 	1.0,
-                        "frenosDesequilibrio1Eje"			=> 	1.0,
-                        "frenosDesequilibrio2Eje"			=> 	1.0,
-                        "amortiguadores1EjeIzq"			    => 	1.0,
-                        "amortiguadores2EjeIzq"			    => 	1.0,
-                        "amortiguadores1EjeDer"			    => 	1.0,
-                        "amortiguadores2EjeDer"			    => 	1.0,
-                        "alineacionDeriva"			        => 	1.0,
-                        "contaminacionCOBaja"			    => 	1.0,
-                        "contaminacionPpmHcBaja"			=> 	1.0,
-                        "contaminacionCOAlta"			    => 	1.0,
-                        "contaminacionPpmHcAlta"			=> 	1.0,
-                        "contaminacionDieselK"			    => 	1.0
+                "detalleVerificacion"		=> 	array(
+                    "detalleVerificacionListado" => array(
+                        "codigo" 			=>  "123",
+                        "descripcion"		=> 	 "XSXSXS",
+                        "tipoDefecto"		=> 		"LALALALAL"
+                         ),
+                    array(
+                        "codigo" 			=>  "999",
+                        "descripcion"		=> 	 "XDXDXXD",
+                        "tipoDefecto"		=> 		"TRTRTRTR"
                     )
-
                 )
+
             )
         )
     );
 }
+
+/**   array(
+"motorVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"lucesVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"direccionVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"frenosVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"suspensionVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"chasisVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"llantasVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"neumaticosVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"generalVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"contaminacionVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"seguridadVerificacion" => array(
+"resultado" => "A",
+"observaciones" => "OBS"
+),
+"medicionesVerificacion" => array(
+"frenosEficaciaServicio" 			=>  1.0 ,
+"frenosEficaciaMano"			    => 	1.0,
+"frenosDesequilibrio1Eje"			=> 	1.0,
+"frenosDesequilibrio2Eje"			=> 	1.0,
+"amortiguadores1EjeIzq"			    => 	1.0,
+"amortiguadores2EjeIzq"			    => 	1.0,
+"amortiguadores1EjeDer"			    => 	1.0,
+"amortiguadores2EjeDer"			    => 	1.0,
+"alineacionDeriva"			        => 	1.0,
+"contaminacionCOBaja"			    => 	1.0,
+"contaminacionPpmHcBaja"			=> 	1.0,
+"contaminacionCOAlta"			    => 	1.0,
+"contaminacionPpmHcAlta"			=> 	1.0,
+"contaminacionDieselK"			    => 	1.0
+)
+
+) */

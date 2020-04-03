@@ -12,7 +12,8 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 ini_set('display_errors', 'On');
 require_once '../../vendor/nusoap/lib/nusoap.php';
-require_once '../../vendor/TCPDF/tcpdf.php';
+require_once '../../vendor/tcpdf/tcpdf.php';
+require_once '../../vendor/tcpdf/wspdf.php';
 
 /**
  * Estructura del WS
@@ -343,8 +344,8 @@ $server->wsdl->addComplexType(
     "",
     array (
         "codigo" 			=>      array("name" => "formulario",      			"type" => "xsd:string"),
-        "descripcion"		=> 		array("name" => "estado", 					"type" => "tns:string"),
-        "tipoDefecto"		=> 		array("name" => "estado", 					"type" => "tns:string")
+        "descripcion"		=> 		array("name" => "estado", 					"type" => "xsd:string"),
+        "tipoDefecto"		=> 		array("name" => "tipoDefecto", 				"type" => "xsd:string")
     )
 );
 
@@ -450,14 +451,14 @@ function informarVerificacion($informarVerificacionRequest){
 
 
 function getPdf(){
-    $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+    $pdf = new WSPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('Nicola Asuni');
-    $pdf->SetTitle('TCPDF Example 001');
-    $pdf->SetSubject('TCPDF Tutorial');
-    $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+    $pdf->SetTitle('tcpdf Example 001');
+    $pdf->SetSubject('tcpdf Tutorial');
+    $pdf->SetKeywords('tcpdf, PDF, example, test, guide');
 
 // set default header data
     $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 001', PDF_HEADER_STRING, array(0,64,255), array(0,64,128));
@@ -504,10 +505,10 @@ function getPdf(){
 // Set some content to print
     $html = <<<EOD
 <h1>Welcome to <a href="http://www.tcpdf.org" style="text-decoration:none;background-color:#CC0000;color:black;">&nbsp;<span style="color:black;">TC</span><span style="color:white;">PDF</span>&nbsp;</a>!</h1>
-<i>This is the first example of TCPDF library.</i>
+<i>This is the first example of tcpdf library.</i>
 <p>This text is printed using the <i>writeHTMLCell()</i> method but you can also use: <i>Multicell(), writeHTML(), Write(), Cell() and Text()</i>.</p>
 <p>Please check the source code documentation and other examples for further information.</p>
-<p style="color:#CC0000;">TO IMPROVE AND EXPAND TCPDF I NEED YOUR SUPPORT, PLEASE <a href="http://sourceforge.net/donate/index.php?group_id=128076">MAKE A DONATION!</a></p>
+<p style="color:#CC0000;">TO IMPROVE AND EXPAND tcpdf I NEED YOUR SUPPORT, PLEASE <a href="http://sourceforge.net/donate/index.php?group_id=128076">MAKE A DONATION!</a></p>
 EOD;
 
 // Print text using writeHTMLCell()
